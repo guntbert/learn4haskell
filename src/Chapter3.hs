@@ -510,6 +510,34 @@ After defining the city, implement the following functions:
    and at least 10 living __people__ inside in all houses of the city in total.
 -}
 
+data House = House
+  { housePeopleCount :: Int} deriving (Show)
+
+-- House :: Int -> House
+House peopleCount
+  | && peopleCount > 0 peopleCount < 5 
+
+data Castle = Castle
+  { castleName :: String}
+  deriving (Show)
+
+data Wall = Wall deriving Show
+
+data CultureInstitution
+  = Church
+  | Library
+  deriving Show
+
+data MagicalCity = MagicalCity
+  { cityName :: String
+  , cityCastle :: Castle
+  , cityWall :: Wall
+  , cityCI :: CultureInstitution
+  , houses :: [House]} deriving (Show)
+
+{- buildCastle :: MagicalCity -> String -> MagicalCity
+buildCastle city cn = city { cityCastle {castleName = cn}} -}
+
 {-
 =🛡= Newtypes
 
